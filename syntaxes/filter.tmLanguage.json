@@ -1,120 +1,139 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "filter",
-	"patterns": [{
-		"include": "#operator"
-	},
-	{
-		"include": "#number"
-	},
-	{
-		"include": "#keywords"
-	},
-	{
-		"include": "#strings"
-	},
-	{
-		"include": "#comment-line"
-	},
-	{
-		"include": "#exo"
-	}],
+	"patterns": [
+		{
+			"include": "#operator"
+		},
+		{
+			"include": "#number"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comment-line"
+		},
+		{
+			"include": "#exo"
+		}
+	],
 	"repository": {
 		"operator": {
-			"patterns": [{
-				"name": "punctuation.definition.tag",
-				"match": "(\\{|\\}|\\[|\\]|\\(|\\)|\\;|\\:|\\,)"
-			},
-			{
-				"name": "keyword",
-				"match": "(=|<|>|\\-|\\+|\\*)"
-			}]
+			"patterns": [
+				{
+					"name": "punctuation.definition.tag",
+					"match": "(\\{|\\}|\\[|\\]|\\(|\\)|\\;|\\:|\\,)"
+				},
+				{
+					"name": "keyword",
+					"match": "(=|<|>|\\-|\\+|\\*)"
+				}
+			]
 		},
 		"number": {
-			"patterns": [{
-				"name": "entity.name.function",
-				"match": "\\b(\\d+)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "entity.name.function",
+					"match": "\\b(\\d+)\\b"
+				}
+			]
 		},
 		"keywords": {
-			"patterns": [{
-				"name": "keyword",
-				"match": "\\b(Show|Hide|Continue|ShowD|HideD|Cont)\\b"
-			},
-			{
-				"name": "entity.name.function",
-				"match": "\\b(Rare|Normal|Magic|Unique|True|False|Crusader|Redeemer|Hunter|Elder|Shaper|Warlord|Divergent|Phantasmal|Anomalous|Blue|Green|Brown|Red|White|Yellow|Cyan|Grey|Orange|Pink|Purple|Circle|Diamond|Hexagon|Square|Star|Triangle|Cross|Moon|Raindrop|Kite|Pentagon|UpsideDownHouse|Temp|NONE|None)\\b"
-			},
-			{
-				"name": "variable",
-				"match": "\\b(Replica|AlternateQuality|FracturedItem|SynthesisedItem|AnyEnchantment|BlightedMap|ShapedMap|ElderItem|ShaperItem|Corrupted|Identified|ElderMap|Mirrored|HasInfluence|GemQualityType|LinkedSockets|Sockets|Quality|MapTier|Width|Height|StackSize|CorruptedMods|GemLevel|ItemLevel|DropLevel|AreaLevel|Rarity|EnchantmentPassiveNum|SocketGroup|Class|BaseType|Prophecy|HasExplicitMod)\\b"
-			},
-			{
-				"name": "storage",
-				"match": "\\b(SetFontSize|SetTextColor|SetBorderColor|SetBackgroundColor|DisableDropSound|PlayAlertSound|PlayAlertSoundPositional|CustomAlertSound|PlayEffect|MinimapIcon)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword",
+					"match": "\\b(Show|Hide|Continue|ShowD|HideD|Cont)\\b"
+				},
+				{
+					"name": "entity.name.function",
+					"match": "\\b(Rare|Normal|Magic|Unique|True|False|Crusader|Redeemer|Hunter|Elder|Shaper|Warlord|Divergent|Phantasmal|Anomalous|Blue|Green|Brown|Red|White|Yellow|Cyan|Grey|Orange|Pink|Purple|Circle|Diamond|Hexagon|Square|Star|Triangle|Cross|Moon|Raindrop|Kite|Pentagon|UpsideDownHouse|Temp|NONE|None)\\b"
+				},
+				{
+					"name": "variable",
+					"match": "\\b(Replica|AlternateQuality|FracturedItem|SynthesisedItem|AnyEnchantment|BlightedMap|ShapedMap|ElderItem|ShaperItem|Corrupted|Identified|ElderMap|Mirrored|HasInfluence|GemQualityType|LinkedSockets|Sockets|Quality|MapTier|Width|Height|StackSize|CorruptedMods|GemLevel|ItemLevel|DropLevel|AreaLevel|Rarity|EnchantmentPassiveNum|SocketGroup|Class|BaseType|Prophecy|HasExplicitMod)\\b"
+				},
+				{
+					"name": "storage",
+					"match": "\\b(SetFontSize|SetTextColor|SetBorderColor|SetBackgroundColor|DisableDropSound|PlayAlertSound|PlayAlertSoundPositional|CustomAlertSound|PlayEffect|MinimapIcon)\\b"
+				}
+			]
 		},
 		"exo": {
-			"patterns": [{
-				"name": "storage",
-				"match": "\\b(Section|Style|var|Empty|Auto|Apply|Func|Mod|MM|Sound|BG|Beam|BC|BD|TX|BT|Base)\\b"
-			},
-			{
-				"name": "token.debug-token",
-				"begin": "!",
-				"end": "($|(?=;))",
-				"patterns": [{
-					"name": "punctuation.definition.tag",
-					"match": "(\\.|\\;)"
-				}]
-			},
-			{
-				"name": "token.debug-token",
-				"begin": "\\$",
-				"end": "($|(?=;)|(?==>))",
-				"patterns": [{
-					"name": "punctuation.definition.tag",
-					"match": "(\\.|\\;)"
-				}]
-			},
-			{
-				"name": "token.warn-token",
-				"begin": "%",
-				"end": "($|(?=;))",
-				"patterns": [{
-					"name": "punctuation.definition.tag",
-					"match": "(\\.|\\;)"
-				}]
-			}]
+			"patterns": [
+				{
+					"name": "storage",
+					"match": "\\b(Section|Style|var|Empty|Auto|Apply|Func|Mod|MM|Sound|BG|Beam|BC|BD|TX|BT|Base)\\b"
+				},
+				{
+					"name": "token.debug-token",
+					"begin": "!",
+					"end": "($|(?=;))",
+					"patterns": [
+						{
+							"name": "punctuation.definition.tag",
+							"match": "(\\.|\\;)"
+						}
+					]
+				},
+				{
+					"name": "token.debug-token",
+					"begin": "\\$",
+					"end": "($|(?=;)|(?==>))",
+					"patterns": [
+						{
+							"name": "punctuation.definition.tag",
+							"match": "(\\.|\\;)"
+						}
+					]
+				},
+				{
+					"name": "token.warn-token",
+					"begin": "%",
+					"end": "($|(?=;))",
+					"patterns": [
+						{
+							"name": "punctuation.definition.tag",
+							"match": "(\\.|\\;)"
+						}
+					]
+				}
+			]
 		},
 		"strings": {
 			"name": "string",
 			"begin": "\"",
 			"end": "\"",
-			"patterns": [{
-				"name": "string",
-				"match": "\\\\"
-			}]
+			"patterns": [
+				{
+					"name": "string",
+					"match": "\\\\"
+				}
+			]
 		},
 		"comment-line": {
 			"name": "comment",
 			"begin": "#",
 			"end": "\n",
 			"patterns": [
-			{
-				"name": "token.debug-token",
-				"begin": "%",
-				"end": "(?=\\s)"
-			},			
-			{
-				"name": "token.warn-token",
-				"begin": "\\$",
-				"end": "(?=\\s)"
-			},
-			{
-				"name": "comment",
-				"match": "\\\\"
-			}]
+				{
+					"name": "token.debug-token",
+					"begin": "%",
+					"end": "(?=\\s)"
+				},
+				{
+					"name": "token.warn-token",
+					"begin": "\\$",
+					"end": "(?=\\s)"
+				},
+				{
+					"name": "comment",
+					"match": "#"
+				}
+			]
 		}
 	},
 	"scopeName": "text.html"

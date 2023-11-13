@@ -1,11 +1,11 @@
 {
-    "name": "poe-filter-language",
-    "displayName": "poe-filter-language",
-    "description": "A Path of Exile Filter langauge extension by NeverSink",
+    "name": "poe-filter-language-nick-ng",
+    "displayName": "poe-filter-language-nick-ng",
+    "description": "A Path of Exile Filter langauge extension by NeverSink, modified by nick-ng",
     "publisher": "NeverSink",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "repository": {
-        "url": "https://github.com/NeverSinkDev/VS-Code-PoE-Filter-Markup-Extension",
+        "url": "https://github.com/nick-ng/VS-Code-PoE-Filter-Markup-Extension",
         "type": "git"
     },
     "engines": {
@@ -23,7 +23,8 @@
                     "exo"
                 ],
                 "extensions": [
-                    ".filter", ".exo"
+                    ".filter",
+                    ".exo"
                 ],
                 "configuration": "./language-configuration.json"
             }
@@ -41,7 +42,12 @@
         "yo": "^4.0.0"
     },
     "devDependencies": {
+        "@vscode/vsce": "^2.22.0",
         "webpack": "^5.76.0",
         "webpack-cli": "^4.6.0"
+    },
+    "scripts": {
+        "start": "npm run package",
+        "package": "vsce package"
     }
 }
